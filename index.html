@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="first js application">
+    <meta name="keywords" content="JS">
+    <meta name="author" content="np. MichRad">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
+    <title>Truly Random Password Generator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">    
+    <script src="script.js" defer></script>
+ </head>
+ <body>
+  <h1>Truly Random Password Generator</h1>
+  <p class="header"><span id="Welcome">The randomness comes from atmospheric noise, which for many purposes is better than the pseudo-random number algorithms typically used in computer programs.</span></p>
+  <div class="randomData">
+    <label for="randomString">Random string is fetched from <a href="https://www.random.org/" target="_blank">www.random.org</a>
+    </label>
+    <button onclick="refreshString()">Change the random string</button>
+    <textarea id="randomString" name="randomString" rows="4" cols="50" placeholder="no random data...">
+    </textarea>
+  </div>
+<!-- containerRange -->
+  <p class="info_txt">Set min, max length of the password [min=8; max=52 characters]</p>
+  <div class="containerRange">
+    <div class="setTime">
+      <div class="multiRangeSlider">
+        <p id="Vmin">Value min: <span id="ValueMin"></span></p>
+        <p id="Vmax">Value max: <span id="ValueMax"></span></p>
+        <input type="range" id="inputLeft" min="8" max="52" value="20" onclick="clearingValue()">
+        <input type="range" id="inputRight" min="8" max="52" value="40"onclick="clearingValue()">
+        <div class="slider">
+          <div class="track"></div>
+          <div class="range"></div>
+          <div class="thumb left"></div>
+          <div class="thumb right"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btns">
+    <input type="button" onclick="getRandomInteger()" value="Generate password length">
+    <input id="passLength" type="number" value="8" min="8" max="99">
+    <input type="button" onclick="displayPassword()" value="Generate a password"><br>
+    <fieldset>
+      <legend>Set password properties and shuffle method:</legend>
+      <div class="leftBox">
+        <label for="numbers" class="checkContainer">Numbers [obligatory]
+          <input type="checkbox" id="numbers" value="numbers" checked disabled style="cursor: not-allowed;">
+          <span class="checkmark" style="cursor: not-allowed;"></span>
+        </label><br>
+        <label for="lower" class="checkContainer">Lower Letters [obligatory]
+          <input type="checkbox" id="lower" value="lower" checked disabled style="cursor: not-allowed;">
+          <span class="checkmark" style="cursor: not-allowed;"></span>
+        </label><br>
+      </div>
+      <div class="rightBox">
+        <label for="capital" class="checkContainer">Capital Letters
+          <input type="checkbox" id="capital" value="capital">
+          <span class="checkmark"></span>
+        </label><br>
+        <label for="specjals" class="checkContainer">Special Signs
+          <input type="checkbox" id="specjals" value="specjals">
+          <span class="checkmark"></span>
+        </label><br>
+      </div>
+      <div class="switchContainer">
+        <p class="description" id="Fisher–Yates">Fisher–Yates shuffle</p>
+        <label class="switcher">
+          <input type="checkbox" id="algorithmSwitcher" method="">
+          <span class="slider"></span>
+        </label>
+        <p class="description" id="Sattolo">Sattolo cycle</p>
+      </div>
+    </fieldset>
+  </div>
+  <div class="copyPass">
+    <input type="text" name="password" id="password" placeholder="here will be the password ...">
+    <input type="button" id="copyButton" onclick="copyPassword()" value="Copy the password" class="toChange">
+  </div>
+  <aside>
+    <div class="dropdown">
+      <h1 class="dropbtn">Info</h1>
+      <div class="hide">
+        <p>The shuffle algorithms were taken from <a href="http://www.rosettacode.org/wiki/Rosetta_Code" target="_blank">here</a>.</p>
+        <p>To read about <a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle" target="_blank">Fisher-Yates shuffle click here</a>.</p>
+        <p>To read about <a href="https://en.wikipedia.org/wiki/Sattolo%27s_algorithm" target="_blank">Sattolo cycle click here</a>.</p>
+        <p>The true random string is taken from <a href="https://www.random.org/" target="_blank">ww.random.org</a>. You can fetch 200,000 bits per day. <a href="https://www.random.org/quota/" target="_blank">This page</a> allows you to examine your current allowance.</p>
+      </div>
+    </div>
+  </aside>
+ </body>
+</html>

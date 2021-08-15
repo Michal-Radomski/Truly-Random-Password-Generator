@@ -1,0 +1,478 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  color: initial;
+  background-color: initial;
+  font-family: "Ubuntu", sans-serif;
+  height: 100vh;
+  max-width: 1000px;
+  margin: auto;
+  background-color: whitesmoke;
+}
+body:not(h1) {
+  font-size: large;
+}
+h1 {
+  text-align: center;
+  text-shadow: 0px 0px 35px wheat, 0px 0px 35px wheat, 0px 0px 35px wheat,
+    0px 0px 35px wheat;
+}
+p.header {
+  text-align: center;
+  span#Welcome {
+    font-style: italic;
+    background-color: rgba(219, 108, 145, 0.6);
+  }
+}
+//Div class="randomData"
+div.randomData {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  label,
+  textarea,
+  button {
+    display: block;
+    margin: 8px;
+  }
+  textarea,
+  button {
+    box-shadow: inset 0px 1px 10px 0px #e184f3;
+    border-radius: 6px;
+    border: 2px solid #a511c0;
+    background-color: whitesmoke;
+    padding: 8px;
+  }
+  button {
+    background: linear-gradient(to bottom, #c123de 5%, #a20dbd 100%);
+    background-color: #c123de;
+    cursor: pointer;
+    color: whitesmoke;
+    font-weight: bold;
+    text-shadow: 0px 1px 0px #9b14b3;
+    &:hover {
+      background: linear-gradient(to bottom, #a20dbd 5%, #c123de 100%);
+      background-color: #a20dbd;
+    }
+    &:active {
+      position: relative;
+      top: 1px;
+    }
+  }
+  label a {
+    text-decoration: none;
+    color: maroon;
+    &:hover {
+      color: red;
+      text-decoration: underline;
+    }
+    &:active {
+      color: blue;
+      text-decoration: underline;
+    }
+    &:visited {
+      color: green;
+    }
+  }
+}
+//Info-txt
+p.info_txt {
+  padding: 20px;
+  text-align: center;
+}
+// Range sliders
+div.containerRange {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  div.setTime {
+    position: relative;
+    width: 50%;
+    max-width: 500px;
+    height: 100px;
+    // background-color: rgba($color: #000000, $alpha: 0.1);
+    div.multiRangeSlider {
+      p {
+        position: absolute;
+        top: 0;
+        transform: translate(0, -60px);
+        span {
+          font-weight: bold;
+        }
+      }
+      p#Vmin {
+        left: 0;
+      }
+      p#Vmax {
+        right: 0;
+      }
+      div.slider {
+        position: relative;
+        z-index: 1;
+        height: 10px;
+        margin: 0 15px;
+        div.track {
+          position: absolute;
+          z-index: 1;
+          left: 0px;
+          right: 0px;
+          top: 0;
+          bottom: 0;
+          border-radius: 5px;
+          background-color: violet;
+        }
+        div.range {
+          position: absolute;
+          z-index: 2;
+          left: 25%;
+          right: 25%;
+          top: 0;
+          bottom: 0;
+          border-radius: 5px;
+          background-color: darkviolet;
+        }
+        div.thumb {
+          position: absolute;
+          z-index: 3;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background-color: darkmagenta;
+          opacity: 0.85;
+        }
+        div.left {
+          left: 25%;
+          transform: translate(-15px, -10px);
+          filter: brightness(92%);
+        }
+        div.right {
+          right: 25%;
+          transform: translate(15px, -10px);
+          filter: brightness(108%);
+        }
+      }
+      input[type="range"] {
+        position: absolute;
+        z-index: 2;
+        height: 10px;
+        width: 100%;
+        appearance: none;
+        -webkit-appearance: none;
+        pointer-events: none;
+        // opacity: 0.2;   // opacity for testing only
+        opacity: 0; // opacity of input-type=range
+        transition: 0.3s;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.5;
+          box-shadow: 0px 0px 0px 20px rgba(0, 0, 0, 0.05);
+        }
+      }
+      input[type="range"]::-moz-range-thumb,
+      input[type="range"]::-webkit-slider-thumb {
+        pointer-events: all;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 0 none;
+        background-color: plum;
+        appearance: none;
+        -webkit-appearance: none;
+      }
+    }
+  }
+}
+//Buttons for generating password
+div.btns {
+  margin-top: 15px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  input {
+    box-shadow: inset 0px 1px 10px 0px #e184f3;
+    background: linear-gradient(to bottom, #c123de 5%, #a20dbd 100%);
+    background-color: #c123de;
+    border-radius: 6px;
+    border: 2px solid #a511c0;
+    display: inline-block;
+    cursor: pointer;
+    color: whitesmoke;
+    font-weight: bold;
+    padding: 8px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #9b14b3;
+    &:hover {
+      background: linear-gradient(to bottom, #a20dbd 5%, #c123de 100%);
+      background-color: #a20dbd;
+    }
+    &:active {
+      position: relative;
+      top: 1px;
+    }
+  }
+  input:nth-child(2) {
+    background: unset;
+    width: 80px;
+    cursor: unset;
+    background-color: whitesmoke;
+    color: black;
+    font-weight: unset;
+    &:hover,
+    &:active {
+      background: unset;
+      background-color: unset;
+      top: 0;
+    }
+  }
+  fieldset {
+    margin-top: 15px;
+    display: inline-block;
+    width: 100%;
+    border: thin solid violet;
+    padding: 10px;
+    border-radius: 6px;
+    height: 130px;
+    legend {
+      font-weight: 500;
+      margin: auto;
+    }
+    div.leftBox {
+      float: left;
+      margin-left: 25px;
+      display: inline;
+    }
+    div.rightBox {
+      float: right;
+      display: inline;
+    }
+  }
+}
+//Checkboex inside fieldbox properties
+div.btns fieldset {
+  user-select: none;
+  div label.checkContainer {
+    display: inline-block;
+    position: relative;
+    input[type="checkbox"] {
+      position: absolute;
+      opacity: 0; // 0.5 for testing only
+      display: inline;
+      left: -27px;
+    }
+    span.checkmark {
+      position: absolute;
+      top: 2px;
+      left: -25px;
+      height: 20px;
+      width: 20px;
+      border-radius: 4px;
+      background-color: wheat;
+      display: inline;
+      padding-right: 15px;
+      cursor: pointer;
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+    }
+  }
+  div label.checkContainer:hover input ~ span.checkmark {
+    background-color: violet;
+    box-shadow: 0 0 10px magenta;
+  }
+  div label.checkContainer input:checked ~ span.checkmark {
+    background-color: darkviolet;
+  }
+  div label.checkContainer input:disabled ~ span.checkmark {
+    background-color: gray;
+  }
+  div label.checkContainer input:checked ~ span.checkmark:after {
+    display: block;
+  }
+  div label.checkContainer span.checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 12px;
+    border: solid whitesmoke;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+  //Checkbox- Toggle Switch for selecting the
+  div.switchContainer {
+    bottom: 15px;
+    display: inline-table;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    p.description {
+      display: inline-block;
+      padding: 10px;
+      margin: auto;
+      top: 20px;
+    }
+    label.switcher {
+      position: relative;
+      display: inline-block;
+      width: 48px;
+      height: 28px;
+      input {
+        opacity: 0; // 1 -> for testing only
+      }
+      span.slider {
+        opacity: 1;
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: purple;
+        transition: 0.4s;
+        border-radius: 14px;
+        &:before {
+          position: absolute;
+          content: "";
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          left: 4px;
+          bottom: 4px;
+          background-color: whitesmoke;
+          transition: 0.4s;
+        }
+      }
+      input:checked + span.slider {
+        background-color: blueviolet;
+      }
+      input:hover + span.slider {
+        box-shadow: 0 0 10px darkmagenta;
+      }
+      input:checked + span.slider:before {
+        transform: translateX(20px);
+      }
+    }
+  }
+}
+//Password input, copy button
+div.copyPass {
+  position: relative;
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  input {
+    margin: 2px;
+    font-size: 102%;
+    display: inline-block;
+    border-radius: 8px;
+    border: 2px solid #29668f;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: inset 0px 1px 10px 0px #9fb4f2;
+  }
+  input[type="text"] {
+    background: unset;
+    width: 525px;
+    cursor: unset;
+    background-color: whitesmoke;
+    color: black;
+    font-weight: unset;
+    text-align: center;
+    box-shadow: inset 0px 1px 10px 0px #9fb4f2;
+    &:hover,
+    &:active {
+      background: unset;
+      background-color: unset;
+      top: 0;
+    }
+  }
+}
+//Class to change when copying the password + class changed
+.toChange {
+  background: linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+  background-color: #7892c2;
+  color: whitesmoke;
+  text-shadow: 0px 1px 0px #283966;
+  &:hover {
+    background: linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+    background-color: #476e9e;
+    color: yellow;
+  }
+  &:active {
+    position: relative;
+    top: 2px;
+    color: yellow;
+  }
+}
+.changed {
+  background-color: whitesmoke;
+  color: #29668f;
+  text-shadow: 1px 1px 10px #9fb4f2;
+}
+//Left-top Hoverable Dropdown Info
+aside {
+  margin: 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  border: none;
+  background-color: wheat;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+  &:hover {
+    filter: brightness(112%);
+  }
+  div.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 280px;
+    h1.dropbtn {
+      font-size: 100%;
+      color: black;
+      text-align: center;
+      background-color: wheat;
+    }
+    div.hide {
+      display: none;
+      border-top: 1px solid black;
+      position: absolute;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+      z-index: 1;
+      background-color: #adc8ec;
+      p {
+        padding: 5px;
+        font-size: 100%;
+        color: black;
+        text-align: justify;
+        text-justify: inter-word;
+        a {
+          text-decoration: none;
+          color: maroon;
+          &:hover {
+            color: red;
+            text-decoration: underline;
+          }
+          &:active {
+            color: blue;
+            text-decoration: underline;
+          }
+          &:visited {
+            color: green;
+          }
+        }
+      }
+    }
+    &:hover div.hide {
+      display: block;
+    }
+  }
+}

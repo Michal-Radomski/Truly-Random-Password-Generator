@@ -1,0 +1,599 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  color: initial;
+  background-color: initial;
+  font-family: "Ubuntu", sans-serif;
+  height: 100vh;
+  max-width: 1000px;
+  margin: auto;
+  background-color: whitesmoke;
+}
+
+body:not(h1) {
+  font-size: large;
+}
+
+h1 {
+  text-align: center;
+  text-shadow: 0px 0px 35px wheat, 0px 0px 35px wheat, 0px 0px 35px wheat, 0px 0px 35px wheat;
+}
+
+p.header {
+  text-align: center;
+}
+
+p.header span#Welcome {
+  font-style: italic;
+  background-color: rgba(219, 108, 145, 0.6);
+}
+
+div.randomData {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+div.randomData label,
+div.randomData textarea,
+div.randomData button {
+  display: block;
+  margin: 8px;
+}
+
+div.randomData textarea,
+div.randomData button {
+  -webkit-box-shadow: inset 0px 1px 10px 0px #e184f3;
+          box-shadow: inset 0px 1px 10px 0px #e184f3;
+  border-radius: 6px;
+  border: 2px solid #a511c0;
+  background-color: whitesmoke;
+  padding: 8px;
+}
+
+div.randomData button {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #c123de), to(#a20dbd));
+  background: linear-gradient(to bottom, #c123de 5%, #a20dbd 100%);
+  background-color: #c123de;
+  cursor: pointer;
+  color: whitesmoke;
+  font-weight: bold;
+  text-shadow: 0px 1px 0px #9b14b3;
+}
+
+div.randomData button:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #a20dbd), to(#c123de));
+  background: linear-gradient(to bottom, #a20dbd 5%, #c123de 100%);
+  background-color: #a20dbd;
+}
+
+div.randomData button:active {
+  position: relative;
+  top: 1px;
+}
+
+div.randomData label a {
+  text-decoration: none;
+  color: maroon;
+}
+
+div.randomData label a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+div.randomData label a:active {
+  color: blue;
+  text-decoration: underline;
+}
+
+div.randomData label a:visited {
+  color: green;
+}
+
+p.info_txt {
+  padding: 20px;
+  text-align: center;
+}
+
+div.containerRange {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+div.containerRange div.setTime {
+  position: relative;
+  width: 50%;
+  max-width: 500px;
+  height: 100px;
+}
+
+div.containerRange div.setTime div.multiRangeSlider p {
+  position: absolute;
+  top: 0;
+  -webkit-transform: translate(0, -60px);
+          transform: translate(0, -60px);
+}
+
+div.containerRange div.setTime div.multiRangeSlider p span {
+  font-weight: bold;
+}
+
+div.containerRange div.setTime div.multiRangeSlider p#Vmin {
+  left: 0;
+}
+
+div.containerRange div.setTime div.multiRangeSlider p#Vmax {
+  right: 0;
+}
+
+div.containerRange div.setTime div.multiRangeSlider div.slider {
+  position: relative;
+  z-index: 1;
+  height: 10px;
+  margin: 0 15px;
+}
+
+div.containerRange div.setTime div.multiRangeSlider div.slider div.track {
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  right: 0px;
+  top: 0;
+  bottom: 0;
+  border-radius: 5px;
+  background-color: violet;
+}
+
+div.containerRange div.setTime div.multiRangeSlider div.slider div.range {
+  position: absolute;
+  z-index: 2;
+  left: 25%;
+  right: 25%;
+  top: 0;
+  bottom: 0;
+  border-radius: 5px;
+  background-color: darkviolet;
+}
+
+div.containerRange div.setTime div.multiRangeSlider div.slider div.thumb {
+  position: absolute;
+  z-index: 3;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: darkmagenta;
+  opacity: 0.85;
+}
+
+div.containerRange div.setTime div.multiRangeSlider div.slider div.left {
+  left: 25%;
+  -webkit-transform: translate(-15px, -10px);
+          transform: translate(-15px, -10px);
+  -webkit-filter: brightness(92%);
+          filter: brightness(92%);
+}
+
+div.containerRange div.setTime div.multiRangeSlider div.slider div.right {
+  right: 25%;
+  -webkit-transform: translate(15px, -10px);
+          transform: translate(15px, -10px);
+  -webkit-filter: brightness(108%);
+          filter: brightness(108%);
+}
+
+div.containerRange div.setTime div.multiRangeSlider input[type="range"] {
+  position: absolute;
+  z-index: 2;
+  height: 10px;
+  width: 100%;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+div.containerRange div.setTime div.multiRangeSlider input[type="range"]:hover {
+  opacity: 0.5;
+  -webkit-box-shadow: 0px 0px 0px 20px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 0px 0px 20px rgba(0, 0, 0, 0.05);
+}
+
+div.containerRange div.setTime div.multiRangeSlider input[type="range"]::-moz-range-thumb,
+div.containerRange div.setTime div.multiRangeSlider input[type="range"]::-webkit-slider-thumb {
+  pointer-events: all;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 0 none;
+  background-color: plum;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+}
+
+div.btns {
+  margin-top: 15px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+div.btns input {
+  -webkit-box-shadow: inset 0px 1px 10px 0px #e184f3;
+          box-shadow: inset 0px 1px 10px 0px #e184f3;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #c123de), to(#a20dbd));
+  background: linear-gradient(to bottom, #c123de 5%, #a20dbd 100%);
+  background-color: #c123de;
+  border-radius: 6px;
+  border: 2px solid #a511c0;
+  display: inline-block;
+  cursor: pointer;
+  color: whitesmoke;
+  font-weight: bold;
+  padding: 8px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #9b14b3;
+}
+
+div.btns input:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #a20dbd), to(#c123de));
+  background: linear-gradient(to bottom, #a20dbd 5%, #c123de 100%);
+  background-color: #a20dbd;
+}
+
+div.btns input:active {
+  position: relative;
+  top: 1px;
+}
+
+div.btns input:nth-child(2) {
+  background: unset;
+  width: 80px;
+  cursor: unset;
+  background-color: whitesmoke;
+  color: black;
+  font-weight: unset;
+}
+
+div.btns input:nth-child(2):hover, div.btns input:nth-child(2):active {
+  background: unset;
+  background-color: unset;
+  top: 0;
+}
+
+div.btns fieldset {
+  margin-top: 15px;
+  display: inline-block;
+  width: 100%;
+  border: thin solid violet;
+  padding: 10px;
+  border-radius: 6px;
+  height: 130px;
+}
+
+div.btns fieldset legend {
+  font-weight: 500;
+  margin: auto;
+}
+
+div.btns fieldset div.leftBox {
+  float: left;
+  margin-left: 25px;
+  display: inline;
+}
+
+div.btns fieldset div.rightBox {
+  float: right;
+  display: inline;
+}
+
+div.btns fieldset {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+div.btns fieldset div label.checkContainer {
+  display: inline-block;
+  position: relative;
+}
+
+div.btns fieldset div label.checkContainer input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  display: inline;
+  left: -27px;
+}
+
+div.btns fieldset div label.checkContainer span.checkmark {
+  position: absolute;
+  top: 2px;
+  left: -25px;
+  height: 20px;
+  width: 20px;
+  border-radius: 4px;
+  background-color: wheat;
+  display: inline;
+  padding-right: 15px;
+  cursor: pointer;
+}
+
+div.btns fieldset div label.checkContainer span.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+div.btns fieldset div label.checkContainer:hover input ~ span.checkmark {
+  background-color: violet;
+  -webkit-box-shadow: 0 0 10px magenta;
+          box-shadow: 0 0 10px magenta;
+}
+
+div.btns fieldset div label.checkContainer input:checked ~ span.checkmark {
+  background-color: darkviolet;
+}
+
+div.btns fieldset div label.checkContainer input:disabled ~ span.checkmark {
+  background-color: gray;
+}
+
+div.btns fieldset div label.checkContainer input:checked ~ span.checkmark:after {
+  display: block;
+}
+
+div.btns fieldset div label.checkContainer span.checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 12px;
+  border: solid whitesmoke;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+div.btns fieldset div.switchContainer {
+  bottom: 15px;
+  display: inline-table;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.btns fieldset div.switchContainer p.description {
+  display: inline-block;
+  padding: 10px;
+  margin: auto;
+  top: 20px;
+}
+
+div.btns fieldset div.switchContainer label.switcher {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 28px;
+}
+
+div.btns fieldset div.switchContainer label.switcher input {
+  opacity: 0;
+}
+
+div.btns fieldset div.switchContainer label.switcher span.slider {
+  opacity: 1;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: purple;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 14px;
+}
+
+div.btns fieldset div.switchContainer label.switcher span.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: whitesmoke;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+div.btns fieldset div.switchContainer label.switcher input:checked + span.slider {
+  background-color: blueviolet;
+}
+
+div.btns fieldset div.switchContainer label.switcher input:hover + span.slider {
+  -webkit-box-shadow: 0 0 10px darkmagenta;
+          box-shadow: 0 0 10px darkmagenta;
+}
+
+div.btns fieldset div.switchContainer label.switcher input:checked + span.slider:before {
+  -webkit-transform: translateX(20px);
+          transform: translateX(20px);
+}
+
+div.copyPass {
+  position: relative;
+  margin-top: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+div.copyPass input {
+  margin: 2px;
+  font-size: 102%;
+  display: inline-block;
+  border-radius: 8px;
+  border: 2px solid #29668f;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  -webkit-box-shadow: inset 0px 1px 10px 0px #9fb4f2;
+          box-shadow: inset 0px 1px 10px 0px #9fb4f2;
+}
+
+div.copyPass input[type="text"] {
+  background: unset;
+  width: 525px;
+  cursor: unset;
+  background-color: whitesmoke;
+  color: black;
+  font-weight: unset;
+  text-align: center;
+  -webkit-box-shadow: inset 0px 1px 10px 0px #9fb4f2;
+          box-shadow: inset 0px 1px 10px 0px #9fb4f2;
+}
+
+div.copyPass input[type="text"]:hover, div.copyPass input[type="text"]:active {
+  background: unset;
+  background-color: unset;
+  top: 0;
+}
+
+.toChange {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #7892c2), to(#476e9e));
+  background: linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+  background-color: #7892c2;
+  color: whitesmoke;
+  text-shadow: 0px 1px 0px #283966;
+}
+
+.toChange:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #476e9e), to(#7892c2));
+  background: linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+  background-color: #476e9e;
+  color: yellow;
+}
+
+.toChange:active {
+  position: relative;
+  top: 2px;
+  color: yellow;
+}
+
+.changed {
+  background-color: whitesmoke;
+  color: #29668f;
+  text-shadow: 1px 1px 10px #9fb4f2;
+}
+
+aside {
+  margin: 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  border: none;
+  background-color: wheat;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+}
+
+aside:hover {
+  -webkit-filter: brightness(112%);
+          filter: brightness(112%);
+}
+
+aside div.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 280px;
+}
+
+aside div.dropdown h1.dropbtn {
+  font-size: 100%;
+  color: black;
+  text-align: center;
+  background-color: wheat;
+}
+
+aside div.dropdown div.hide {
+  display: none;
+  border-top: 1px solid black;
+  position: absolute;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  background-color: #adc8ec;
+}
+
+aside div.dropdown div.hide p {
+  padding: 5px;
+  font-size: 100%;
+  color: black;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+aside div.dropdown div.hide p a {
+  text-decoration: none;
+  color: maroon;
+}
+
+aside div.dropdown div.hide p a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+aside div.dropdown div.hide p a:active {
+  color: blue;
+  text-decoration: underline;
+}
+
+aside div.dropdown div.hide p a:visited {
+  color: green;
+}
+
+aside div.dropdown:hover div.hide {
+  display: block;
+}
+/*# sourceMappingURL=style.css.map */
