@@ -1,4 +1,4 @@
-# Truly-Password-Generator
+# Truly-Random-Password-Generator
 
-Truly Password generator: generates passwords based on truly random strings.
+Truly Random Password generator: generates passwords based on truly random strings.
 
