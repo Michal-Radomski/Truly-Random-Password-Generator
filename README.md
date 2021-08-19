@@ -15,6 +15,7 @@ you can copy to the clipboard.
 ## Notes/ ToDo List/ Issues
 
 1. You can fetch 200,000 bits per day from <https://www.random.org/>.
+2. Responsiveness is not done yet.
 
 ## ScreenShot
 
